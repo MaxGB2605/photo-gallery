@@ -1,0 +1,23 @@
+E:\SDET Automation\Projects\Web Projects\photo-gallery-project\QA
+E:\SDET Automation\Projects\Web Projects\photo-gallery-project\Plan - Instructions
+E:\SDET Automation\Projects\Web Projects\photo-gallery-project\Practice
+E:\SDET Automation\Projects\Web Projects\photo-gallery-project\server\db.sqlite
+
+
+# Node dependencies
+server/node_modules/
+
+# Database
+server/db.sqlite
+
+# Environment variables
+server/.env
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# VS Code (optional)
+.vscode/
