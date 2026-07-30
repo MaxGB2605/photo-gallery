@@ -47,6 +47,19 @@ async function handleCreateAlbumRequest(request, response) {
   const coverImage = request.body.coverImage;
   const eventDate = request.body.eventDate;
 
+  //Validation for the title field to make sure it is a string and not empty
+  if (typeof title !== "string") {
+    return response
+      .status(400)
+      .json({ error: "Title must be a string. Please add the title." });
+  }
+
+  if (!title || title.trim() === "") {
+    return response
+      .status(400)
+      .json({ error: "Title is required. Please add the title." });
+  }
+
   await addAlbum(title, coverImage, eventDate);
 
   response.json({
