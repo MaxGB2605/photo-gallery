@@ -46,6 +46,7 @@ async function handleCreateAlbumRequest(request, response) {
   const title = request.body.title;
   const coverImage = request.body.coverImage;
   const eventDate = request.body.eventDate;
+  const eventDatePattern = /^\d{4}-\d{2}-\d{2}$/; // Regular expression pattern for YYYY-MM-DD format
 
   //Validation for the title field to make sure it is a string and not empty
   if (typeof title !== "string") {
@@ -58,6 +59,40 @@ async function handleCreateAlbumRequest(request, response) {
     return response
       .status(400)
       .json({ error: "Title is required. Please add the title." });
+  }
+
+  //Date validation to make sure the eventDate is a valid date string
+  if (eventDate !== undefined && typeof eventDate !== "string") {
+    return response.status(400).json({
+      error:
+        "Event date should be a string. Pllease enter proper event date in the format YYYY-MM-DD.",
+    });
+  }
+
+  //Date validation to make sure the eventDate is in the correct format YYYY-MM-DD
+  if (eventDate !== undefined && !eventDatePattern.test(eventDate)) {
+    return response.status(400).json({
+      error:
+        "Event date should be in the format YYYY-MM-DD. Please enter a valid event date.",
+    });
+  }
+
+  //Date validation to make sure the eventDate is a valid date
+  if (eventDate !== undefined) {
+    
+    const [year, month, day] = eventDate.split("-").map(Number);
+
+    const date = new Date(year, month - 1, day);
+    if (
+      date.getFullYear() !== year ||
+      date.getMonth() !== month - 1 ||
+      date.getDate() !== day
+    ) {
+      return response.status(400).json({
+        error:
+          "Event date is not valid calendar date. Please enter valid calendar date.",
+      });
+    }
   }
 
   await addAlbum(title, coverImage, eventDate);
