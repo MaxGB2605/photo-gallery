@@ -38,6 +38,22 @@ async function getAlbums() {
   return albums;
 }
 
+//Query to get album by id
+async function getAlbumById(id) {
+  const db = await openDatabase();
+
+  const album = await db.get(
+    `
+    SELECT * 
+    FROM albums
+    WHERE id = ?
+    `,
+    [id],
+  );
+
+  return album;
+}
+
 //FUnction to add albums toDB
 async function addAlbum(title, coverImage, eventDate) {
   const db = await openDatabase();
@@ -52,4 +68,4 @@ async function addAlbum(title, coverImage, eventDate) {
 }
 
 //This makes the initializeDatabase function available to other files that import this module
-export { initializeDatabase, getAlbums, addAlbum };
+export { initializeDatabase, getAlbums, addAlbum, getAlbumById };
