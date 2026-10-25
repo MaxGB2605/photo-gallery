@@ -26,7 +26,7 @@ async function initializeDatabase() {
   console.log("Album table is ready");
 }
 
-//Query to get the albums
+//Query to get the albums (GET request)
 async function getAlbums() {
   const db = await openDatabase();
 
@@ -38,7 +38,7 @@ async function getAlbums() {
   return albums;
 }
 
-//Query to get album by id
+//Query to get album by id (GET request)
 async function getAlbumById(id) {
   const db = await openDatabase();
 
@@ -54,7 +54,7 @@ async function getAlbumById(id) {
   return album;
 }
 
-//FUnction to add albums toDB
+//Function to add albums toDB (POST request)
 async function addAlbum(title, coverImage, eventDate) {
   const db = await openDatabase();
 

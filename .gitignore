@@ -1,14 +1,13 @@
-E:\SDET Automation\Projects\Web Projects\photo-gallery-project\QA
-E:\SDET Automation\Projects\Web Projects\photo-gallery-project\Plan - Instructions
-E:\SDET Automation\Projects\Web Projects\photo-gallery-project\Practice
-E:\SDET Automation\Projects\Web Projects\photo-gallery-project\server\db.sqlite
 
-photo-gallery-project/QA
-photo-gallery-project/Plan - Instructions
-photo-gallery-project/Practice
+Plan - Instructions/*
+QA/*
+Terminal Commands/*
+Project Documents/*
+server/__tests__/*
+Practice/*
 
 # Node dependencies
-server/node_modules/
+server/node_modules/*
 
 # Database
 server/db.sqlite
@@ -24,3 +23,4 @@ server/.env
 
 # VS Code (optional)
 .vscode/
+/node_modules/*
