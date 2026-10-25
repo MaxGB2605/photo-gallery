@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333333;
+  background-color: #f5f3ef;
+  margin: 0;
+  padding: 24px;
+}
+
+/* Title of the page style */
+h1 {
+  text-align: center;
+  font-size: 36 px;
+  margin-bottom: 32px;
+}
+
+/* Grid for album container id style */
+#albums-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/*Album card class style */
+.album-card {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e1dc;
+  transition: box-shadow 0.2s ease;
+}
+
+/*hoover effect for album cards*/
+.album-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/*Images inside the album card style*/
+.album-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/*style for header h2 in album card*/
+.album-card h2 {
+  font-size: 20px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+/*style for paragraph p in album card*/
+.album-card p {
+  font-size: 14px;
+  color: #777777;
+  margin-top: 0px;
+}
